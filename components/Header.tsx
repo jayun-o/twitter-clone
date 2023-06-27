@@ -5,10 +5,10 @@ import { BiArrowBack } from 'react-icons/bi'
 
 interface HeaderProps {
     label?: string;
-    showBackArraow?: boolean;
+    showBackArrow?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ label, showBackArraow }) => {
+const Header: React.FC<HeaderProps> = ({ label, showBackArrow }) => {
     const router = useRouter();
 
     const handleBack = useCallback(() => {
@@ -20,16 +20,16 @@ const Header: React.FC<HeaderProps> = ({ label, showBackArraow }) => {
     <div className='border-b-[1px] border-neutral-800 p-5'>
         <div className='flex flex-row items-center gap-2'>
             {
-                showBackArraow && (
+                showBackArrow && (
                     <BiArrowBack
                     onClick={handleBack}
                     color='white'
                     size={20}
-                    className='cursor-pointer hover:opacity-70 transition'
+                    className='transition cursor-pointer hover:opacity-70'
                     />
                 )
             }
-            <h1 className='text-white text-xl font-semibold'>{label}</h1>
+            <h1 className='text-xl font-semibold text-white'>{label}</h1>
         </div>
     </div>
   )
