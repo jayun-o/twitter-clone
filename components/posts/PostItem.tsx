@@ -52,26 +52,19 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
   return (
     <div 
       onClick={goToPost}
-      className="
-        border-b-[1px] 
-        border-neutral-800 
-        p-5 
-        cursor-pointer 
-        hover:bg-neutral-900 
-        transition
-      ">
+      className="border-b-[1px] border-neutral-800 p-5 cursor-pointer hover:bg-neutral-900 transition">
       <div className="flex flex-row items-start gap-3">
         <Avatar userId={data.user.id} />
         <div>
           <div className="flex flex-row items-center gap-2">
             <p 
               onClick={goToUser} 
-              className="font-semibold text-white cursor-pointer  hover:underline">
+              className="font-semibold text-white cursor-pointer hover:underline">
               {data.user.name}
             </p>
             <span 
               onClick={goToUser} 
-              className="hidden cursor-pointer  text-neutral-500 hover:underline md:block">
+              className="hidden cursor-pointer text-neutral-500 hover:underline md:block">
               @{data.user.username}
             </span>
             <span className="text-sm text-neutral-500">
@@ -83,7 +76,7 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
           </div>
           <div className="flex flex-row items-center gap-10 mt-3">
             <div 
-              className="flex flex-row items-center gap-2 transition cursor-pointer  text-neutral-500 hover:text-sky-500">
+              className="flex flex-row items-center gap-2 transition cursor-pointer text-neutral-500 hover:text-sky-500">
               <AiOutlineMessage size={20} />
               <p>
                 {data.comments?.length || 0}
@@ -91,7 +84,7 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
             </div>
             <div
               onClick={onLike}
-              className="flex flex-row items-center gap-2 transition cursor-pointer  text-neutral-500 hover:text-red-500">
+              className="flex flex-row items-center gap-2 transition cursor-pointer text-neutral-500 hover:text-red-500">
               <LikeIcon color={hasLiked ? 'red' : ''} size={20} />
               <p>
                 {data.likedIds.length}
